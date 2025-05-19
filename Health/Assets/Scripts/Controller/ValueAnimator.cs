@@ -1,0 +1,35 @@
+using System;
+using System.Collections;
+using UnityEngine;
+
+public class ValueAnimator : MonoBehaviour
+{
+    [Range(0f, .02f)]
+    [SerializeField] private float _animationStep;
+
+    private Coroutine _coroutine;
+
+    public void Animate(Action<float> action, float startValue, float finalValue)
+    {
+        if (_coroutine != null)
+            StopCoroutine(_coroutine);
+
+        _coroutine = StartCoroutine(AnimateAnimateCoroutine(action, startValue, finalValue));
+    }
+
+    private IEnumerator AnimateAnimateCoroutine(Action<float> action, float startValue, float finalValue)
+    {
+        float progress = 0f;
+
+        while (progress < 1f)
+        {
+            startValue = Mathf.MoveTowards(startValue, finalValue, _animationStep);
+            progress += _animationStep;
+            action?.Invoke(startValue);
+
+            yield return null;
+        }
+
+        action?.Invoke(finalValue);
+    }
+}
