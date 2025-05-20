@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8cd7cb2cecbd849b019b58c7297b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startHealthPoints: 150
+  _startValue: 150
 --- !u!1 &580084790
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +783,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &841283031
+--- !u!1 &893448919
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -791,37 +791,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 841283033}
-  - component: {fileID: 841283032}
+  - component: {fileID: 893448921}
+  - component: {fileID: 893448920}
   m_Layer: 0
-  m_Name: Health Button Handler
+  m_Name: Healer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &841283032
+--- !u!114 &893448920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841283031}
+  m_GameObject: {fileID: 893448919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f22b87fecb9c304d8f8b4fb6d01613b, type: 3}
+  m_Script: {fileID: 11500000, guid: 335e5008f17ebbe40bdc10cddbefe4b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 577368344}
-  _damage: 17.4
-  _healPoints: 21
---- !u!4 &841283033
+  _healPpoints: 14.5
+--- !u!4 &893448921
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841283031}
+  m_GameObject: {fileID: 893448919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -842,7 +841,6 @@ GameObject:
   - component: {fileID: 896145660}
   - component: {fileID: 896145659}
   - component: {fileID: 896145658}
-  - component: {fileID: 896145662}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -938,18 +936,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &896145662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896145657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a6c50848681cc4e9b12a6fe5d7a671, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,6 +1269,7 @@ GameObject:
   - component: {fileID: 1359607517}
   - component: {fileID: 1359607516}
   - component: {fileID: 1359607515}
+  - component: {fileID: 1359607518}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1353,19 +1340,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1359607516}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 841283032}
-        m_TargetAssemblyTypeName: HealthButtonUI, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1359607516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,6 +1379,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359607513}
   m_CullTransparentMesh: 1
+--- !u!114 &1359607518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359607513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f22b87fecb9c304d8f8b4fb6d01613b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactable: {fileID: 1566374728}
 --- !u!1 &1409242970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthHandler: {fileID: 577368344}
---- !u!1 &1463948473
+--- !u!1 &1566374727
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1515,38 +1503,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1463948475}
-  - component: {fileID: 1463948474}
+  - component: {fileID: 1566374729}
+  - component: {fileID: 1566374728}
   m_Layer: 0
-  m_Name: UILoader
+  m_Name: Attacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1463948474
+--- !u!114 &1566374728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463948473}
+  m_GameObject: {fileID: 1566374727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab7d4d666fad1841ae7c69f11033901, type: 3}
+  m_Script: {fileID: 11500000, guid: bdf7345ed994c754e8a4f30d337580c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ui: {fileID: 896145662}
---- !u!4 &1463948475
+  _health: {fileID: 577368344}
+  _damage: 13.1
+--- !u!4 &1566374729
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463948473}
+  m_GameObject: {fileID: 1566374727}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1153.0608, y: 603.60046, z: -29.327127}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1894,6 +1883,7 @@ GameObject:
   - component: {fileID: 2084907189}
   - component: {fileID: 2084907188}
   - component: {fileID: 2084907187}
+  - component: {fileID: 2084907190}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1964,19 +1954,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2084907188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 841283032}
-        m_TargetAssemblyTypeName: HealthButtonUI, Assembly-CSharp
-        m_MethodName: Heal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2084907188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2015,6 +1993,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084907185}
   m_CullTransparentMesh: 1
+--- !u!114 &2084907190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084907185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f22b87fecb9c304d8f8b4fb6d01613b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactable: {fileID: 893448920}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2025,5 +2016,5 @@ SceneRoots:
   - {fileID: 301430371}
   - {fileID: 1038383634}
   - {fileID: 577368343}
-  - {fileID: 841283033}
-  - {fileID: 1463948475}
+  - {fileID: 1566374729}
+  - {fileID: 893448921}

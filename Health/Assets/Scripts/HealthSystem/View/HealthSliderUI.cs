@@ -4,14 +4,14 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class HealthSliderUI : HealthUI
 {
-    protected Slider _slider;
+    protected Slider Slider;
 
     private void Awake() =>
-        _slider = GetComponent<Slider>();
+        Slider = GetComponent<Slider>();
 
     public override void ChangeValue(float value)
     {
-        float finalValue = value / MaxHealth;
-        _slider.value = finalValue;
+        float finalValue = value / MaxValue;
+        Slider.value = finalValue;
     }
 }

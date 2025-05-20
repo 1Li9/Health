@@ -10,9 +10,9 @@ public class HealthSmootheSliderUI : HealthSliderUI
 
     public override void ChangeValue(float value)
     {
-        float finalValue = value / MaxHealth;
-        float startValue = Health / MaxHealth;
-        _valueAnimator.Animate((value) => _slider.value = value, startValue, finalValue);
-        Health = value;
+        float finalValue = value / MaxValue;
+        float startValue = Value / MaxValue;
+        _valueAnimator.Animate((value) => Slider.value = value, startValue, finalValue);
+        Value = value;
     }
 }

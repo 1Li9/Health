@@ -14,10 +14,10 @@ public class ValueAnimator : MonoBehaviour
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
-        _coroutine = StartCoroutine(AnimateAnimateCoroutine(action, startValue, finalValue));
+        _coroutine = StartCoroutine(AnimateCoroutine(action, startValue, finalValue));
     }
 
-    private IEnumerator AnimateAnimateCoroutine(Action<float> action, float startValue, float finalValue)
+    private IEnumerator AnimateCoroutine(Action<float> action, float startValue, float finalValue)
     {
         float progress = 0f;
 

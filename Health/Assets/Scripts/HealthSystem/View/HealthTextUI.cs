@@ -11,8 +11,8 @@ public class HealthTextUI : HealthUI
 
     public override void ChangeValue(float value)
     {
-        Health = value;
-        float displayValue = Mathf.Round(Health);
-        _text.text = $"{displayValue} / {MaxHealth}";
+        Value = value;
+        float displayValue = Mathf.Round(Value);
+        _text.text = $"{displayValue} / {MaxValue}";
     }
 }
