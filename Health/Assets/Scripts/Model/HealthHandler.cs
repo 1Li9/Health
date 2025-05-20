@@ -1,10 +1,9 @@
 using UnityEngine;
 
-public class HealthHandler : DamagebleObject
+public class HealthHandler : MonoBehaviour
 {
     [SerializeField] private float _startHealthPoints;
 
-    public override IDamageble Damageble { get => Health; }
     public Health Health { get; private set; }
 
     private void Awake() =>
@@ -13,9 +12,9 @@ public class HealthHandler : DamagebleObject
     private void Start() =>
         Health.SetHealthPoints(_startHealthPoints);
 
-    public override void TakeDamage(float damage) =>
+    public void TakeDamage(float damage) =>
         Health.TakeDamage(damage);
 
-    public override void Heal(float healPoints) =>
+    public void Heal(float healPoints) =>
         Health.Heal(healPoints);
 }

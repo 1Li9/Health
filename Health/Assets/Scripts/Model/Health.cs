@@ -1,6 +1,6 @@
 using System;
 
-public class Health : IDamageble
+public class Health
 {
     private float healthPoints;
     private float maxHealthPoints;

@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class HealthUI : MonoBehaviour
+public abstract class HealthUI : MonoBehaviour
 {
     [SerializeField] private HealthHandler _healthHandler;
-    [SerializeField] private ValueDisplay _valueDisplay;
 
-    private float _maxHealth;
+    protected float MaxHealth;
+    protected float Health;
 
     private void OnEnable()
     {
@@ -19,15 +19,8 @@ public class HealthUI : MonoBehaviour
         _healthHandler.Health.OnMaxHealthPointsChanged -= SetMaxValue;
     }
 
-    public void ChangeValue(float value)
-    {
-        value /= _maxHealth;
-        _valueDisplay.Value = value;
-    }
+    public abstract void ChangeValue(float value);
 
-    private void SetMaxValue(float value)
-    {
-        _maxHealth = value;
-        _valueDisplay.MaxValue = value;
-    }
+    private void SetMaxValue(float value) =>
+        MaxHealth = value;
 }
